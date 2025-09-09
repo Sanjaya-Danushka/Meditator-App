@@ -12,7 +12,7 @@ class MeditationExerciseModel {
     required this.description,
     required this.duration,
     required this.audioUrl,
-    required this.videoUrl,
+    required this.videoUrl,// required List<String> instructions, required String instructionsUrl, required String imagePath,
   });
 
   factory MeditationExerciseModel.fromJson(Map<String, dynamic> json) {
