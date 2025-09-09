@@ -8,7 +8,7 @@ import 'package:meditator/providers/sleep_exercise_provider.dart';
 import 'package:provider/provider.dart';
 
 class FilterProvider extends ChangeNotifier {
-  List<dynamic> _fallData = [];
+  List<dynamic> _filteredData = [];
   List<dynamic> filteredData = [];
 
   //get all ther data from other providers
@@ -36,10 +36,12 @@ class FilterProvider extends ChangeNotifier {
           listen: false,
         ).sleepExercises;
 
-    _fallData = [...mindfullExercise, ...meditationExercise, ...sleepExercise];
+    _filteredData = [...mindfullExercise, ...meditationExercise, ...sleepExercise];
     
-    filteredData = _fallData;
+    filteredData = _filteredData;
     notifyListeners();
 
   }
+  //getter
+  List<dynamic> get filterData => _filteredData;
 }
