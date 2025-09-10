@@ -164,23 +164,23 @@ class MindfullExerciseProvider extends ChangeNotifier {
     MindfullExercises = List.from(_allMindfullexercises);
   }
 
-  // // Method to fetch all the mindfulness exercises
-  // List<MindfullExerciseModel> getMindfullExercise() {
-  //   return MindfullExercises;
-  // }
+  // Method to fetch all the mindfulness exercises
+  List<MindfullExerciseModel> getMindfullExercise() {
+    return MindfullExercises;
+  }
 
-  // // Method to search by the title
-  // void searchMindfullExercise(String query) {
-  //   if (query.isEmpty) {
-  //     MindfullExercises = List.from(_allMindfullexercises);
-  //   } else {
-  //     MindfullExercises = _allMindfullexercises
-  //         .where(
-  //           (exercise) =>
-  //               exercise.name.toLowerCase().contains(query.toLowerCase()),
-  //         )
-  //         .toList();
-  //   }
-  //   notifyListeners();
-  // }
+  // Method to search by the title
+  void searchMindfullExercise(String query) {
+    if (query.isEmpty) {
+      MindfullExercises = List.from(_allMindfullexercises);
+    } else {
+      MindfullExercises = _allMindfullexercises
+          .where(
+            (exercise) =>
+                exercise.name.toLowerCase().contains(query.toLowerCase()),
+          )
+          .toList();
+    }
+    notifyListeners();
+  }
 }

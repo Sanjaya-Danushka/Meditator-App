@@ -69,30 +69,110 @@ class HomePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: AppColors.primaryPurple.withAlpha(80),
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
                                 children: [
                                   FilterChip(
-                                    label: Text("All"),
-                                    onSelected: null,
+                                    label: Text(
+                                      "All",
+                                      style: TextStyle(
+                                        color:
+                                            filterProvider
+                                                    .getSelectedCategory ==
+                                                "All"
+                                            ? AppColors.primaryWhite
+                                            : AppColors.primaryBlack,
+                                      ),
+                                    ),
+                                    onSelected: (value) {
+                                      Provider.of<FilterProvider>(
+                                        context,
+                                        listen: false,
+                                      ).filterDataMethod("All");
+                                    },
+                                    selected:
+                                        filterProvider.getSelectedCategory ==
+                                        "All",
+                                    selectedColor: AppColors.primaryPurple,
+                                    showCheckmark: false,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   FilterChip(
-                                    label: Text("Mindfullness"),
-                                    onSelected: null,
+                                    label: Text(
+                                      "Mindfullness",
+                                      style: TextStyle(
+                                        color:
+                                            filterProvider
+                                                    .getSelectedCategory ==
+                                                "Mindfullness"
+                                            ? AppColors.primaryWhite
+                                            : AppColors.primaryBlack,
+                                      ),
+                                    ),
+                                    onSelected: (value) {
+                                      Provider.of<FilterProvider>(
+                                        context,
+                                        listen: false,
+                                      ).filterDataMethod("Mindfullness");
+                                    },
+                                    selected:
+                                        filterProvider.getSelectedCategory ==
+                                        "Mindfullness",
+                                    selectedColor: AppColors.primaryPurple,
+                                    showCheckmark: false,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   FilterChip(
-                                    label: Text("Meditation"),
-                                    onSelected: null,
+                                    label: Text(
+                                      "Meditation",
+                                      style: TextStyle(
+                                        color:
+                                            filterProvider
+                                                    .getSelectedCategory ==
+                                                "Meditation"
+                                            ? AppColors.primaryWhite
+                                            : AppColors.primaryBlack,
+                                      ),
+                                    ),
+                                    onSelected: (value) {
+                                      Provider.of<FilterProvider>(
+                                        context,
+                                        listen: false,
+                                      ).filterDataMethod("Meditation");
+                                    },
+                                    selected:
+                                        filterProvider.getSelectedCategory ==
+                                        "Meditation",
+                                    selectedColor: AppColors.primaryPurple,
+                                    showCheckmark: false,
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   FilterChip(
-                                    label: Text("Sleep Stories"),
-                                    onSelected: null,
+                                    label: Text(
+                                      "Sleep Stories",
+                                      style: TextStyle(
+                                        color:
+                                            filterProvider
+                                                    .getSelectedCategory ==
+                                                "Sleep Stories"
+                                            ? AppColors.primaryWhite
+                                            : AppColors.primaryBlack,
+                                      ),
+                                    ),
+                                    onSelected: (value) {
+                                      Provider.of<FilterProvider>(
+                                        context,
+                                        listen: false,
+                                      ).filterDataMethod("Sleep Stories");
+                                    },
+                                    selected:
+                                        filterProvider.getSelectedCategory ==
+                                        "Sleep Stories",
+                                    selectedColor: AppColors.primaryPurple,
+                                    showCheckmark: false,
                                   ),
                                 ],
                               ),

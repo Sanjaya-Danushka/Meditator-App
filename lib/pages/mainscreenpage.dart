@@ -19,8 +19,8 @@ class _MainScreenState extends State<MainScreen> {
 
   //omport pages
   static const List<Widget> _pages = [
-    HomePage(),
     MindfullExercises(),
+    HomePage(),
     CustomExercises(),
     ProfilePage(),
     CreateCustom(),
@@ -65,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 semanticsLabel: 'brain',
               ),
-              label: 'Music',
+              label: 'Mindfull',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
