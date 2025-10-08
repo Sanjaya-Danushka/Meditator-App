@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:meditator/providers/mindfull_exercise_provider.dart';
+import 'package:meditator/router/route_name.dart';
 import 'package:meditator/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -69,6 +73,11 @@ class MindfullExercises extends StatelessWidget {
                       color: Color.fromARGB(255, 67, 67, 67),
                     ),
                   ),
+                  onChanged: (value) {
+                    context
+                        .read<MindfullExerciseProvider>()
+                        .searchMindfullExercise(value);
+                  },
                 ),
                 const SizedBox(height: 20),
                 Consumer<MindfullExerciseProvider>(
@@ -80,45 +89,55 @@ class MindfullExercises extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final exercise =
                             mindfullExercise.MindfullExercises[index];
-                        return Container(
-                          margin: const EdgeInsets.symmetric(vertical: 5),
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryDarkBlue.withAlpha(40),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: ClipRRect(
-                                  borderRadius: BorderRadius.circular(100),
-                                  child: Image.asset(
-                                    exercise.imagePath,
-                                    width:
-                                        MediaQuery.of(context).size.width *
-                                        0.13,
-                                    height:
-                                        MediaQuery.of(context).size.height *
-                                        0.13,
-                                    fit: BoxFit.cover,
+                        return GestureDetector(
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              RouteName.mindfullExercisePage,
+                              queryParameters: {
+                                'mindfulExercise': jsonEncode(exercise),
+                              },
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(vertical: 5),
+                            decoration: BoxDecoration(
+                              color: AppColors.primaryDarkBlue.withAlpha(40),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: ClipRRect(
+                                    borderRadius: BorderRadius.circular(100),
+                                    child: Image.asset(
+                                      exercise.imagePath,
+                                      width:
+                                          MediaQuery.of(context).size.width *
+                                          0.13,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                          0.13,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  title: Text(
+                                    exercise.name,
+                                    style: const TextStyle(
+                                      color: AppColors.primaryPurple,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    exercise.description,
+                                    style: const TextStyle(
+                                      color: AppColors.primaryDarkBlue,
+                                      fontSize: 12,
+                                    ),
                                   ),
                                 ),
-                                title: Text(
-                                  exercise.name,
-                                  style: const TextStyle(
-                                    color: AppColors.primaryPurple,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                subtitle: Text(
-                                  exercise.description,
-                                  style: const TextStyle(
-                                    color: AppColors.primaryDarkBlue,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       },
