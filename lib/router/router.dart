@@ -19,7 +19,7 @@ class RouterClass {
         path: '/mindfullExercisePage',
         name: RouteName.mindfullExercisePage,
         builder: (context, state) {
-          final mindfullExerciseJson = state.uri.queryParameters['mindfullexercises'];
+          final mindfullExerciseJson = state.uri.queryParameters['mindfulExercise'];
           final mindfullExercise = MindfullExerciseModel.fromJson(jsonDecode(mindfullExerciseJson!));
           return MindfullExerciseDetailsPage(
             exercise: mindfullExercise,
