@@ -75,7 +75,9 @@ class FilterProvider extends ChangeNotifier {
     }
     // Debug print to check filtered data
     print('Filtering by $category. Found ${filteredData.length} items');
-    filteredData.forEach((item) => print(' - ${item.name}: ${item.runtimeType}'));
+    for (var item in filteredData) {
+      print(' - ${item.name}: ${item.runtimeType}');
+    }
     notifyListeners();
   }
   //method to return selected category
