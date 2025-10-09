@@ -19,7 +19,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Repeat for the duration of the exercise.",
         ],
         duration: 5,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
         imagePath: "assets/images/mindfull.png",
       ),
       MindfullExerciseModel(
@@ -35,7 +35,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
         ],
         imagePath: "assets/images/mindfull.png",
         duration: 10,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Stress Relief",
@@ -50,7 +50,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Slowly move your attention up through your body, relaxing each part as you go.",
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Focus",
@@ -65,7 +65,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "If your mind wanders, gently bring it back to the task at hand.",
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Anxiety Relief",
@@ -82,7 +82,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Identify one thing you can taste.",
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Mindfulness",
@@ -97,7 +97,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Focus on your breath and the rhythm of your movement.",
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Self-Acceptance",
@@ -112,7 +112,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Extend these phrases to others: 'May you be happy. May you be healthy. May you be safe. May you live with ease.'",
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Relaxation",
@@ -127,7 +127,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Move up through your body, tensing and relaxing each muscle group.",
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Energy",
@@ -142,7 +142,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Hold each stretch for a few breaths, focusing on the sensations in your body.",
         ],
         duration: 5,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
       MindfullExerciseModel(
         category: "Creativity",
@@ -157,7 +157,7 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "If your mind wanders, gently bring your attention back to the drawing.",
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
+        instructionsUrl: "https://github.com/Sanjaya-Danushka",
       ),
     ];
 

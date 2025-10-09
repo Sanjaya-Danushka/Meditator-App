@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:meditator/models/mindfull_exercisemodel.dart';
 import 'package:meditator/utils/colors.dart';
 import 'package:meditator/utils/text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MindfullExerciseDetailsPage extends StatelessWidget {
   final MindfullExerciseModel exercise;
   const MindfullExerciseDetailsPage({super.key, required this.exercise});
+
+  Future<void> _luanchUrl(String url) async {
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +64,21 @@ class MindfullExerciseDetailsPage extends StatelessWidget {
                   SizedBox(width: 8),
                   Text("${exercise.duration} min"),
                 ],
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(
+                    AppColors.primaryGreen,
+                  ),
+                ),
+                onPressed: () async {
+                  await _luanchUrl(exercise.instructionsUrl);
+                },
+                child: Text(
+                  "View Detailed Instructions",
+                  style: const TextStyle(color: Colors.black),
+                ),
               ),
             ],
           ),
