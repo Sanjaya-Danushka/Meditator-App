@@ -1,85 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:meditator/models/meditation_exercise_model.dart';
-import 'package:meditator/models/mindfull_exercisemodel.dart';
-import 'package:meditator/models/sleep_exercise_model.dart';
-import 'package:meditator/providers/meditation_provider.dart';
-import 'package:meditator/providers/mindfull_exercise_provider.dart';
-import 'package:meditator/providers/sleep_exercise_provider.dart';
+import 'package:meditation/models/meditation_model.dart';
+import 'package:meditation/models/mindfull_exercise_model.dart';
+import 'package:meditation/models/sleep_content_model.dart';
+import 'package:meditation/providers/meditation_provider.dart';
+import 'package:meditation/providers/mindfull_exercise_provider.dart';
+import 'package:meditation/providers/sleep_content_provider.dart';
 import 'package:provider/provider.dart';
 
-// Import model classes for type checking
-
-class FilterProvider extends ChangeNotifier {
+class FilterdDataprovider extends ChangeNotifier {
+  List<dynamic> _allData = [];
   List<dynamic> _filteredData = [];
-  List<dynamic> filteredData = [];
-  String _selectedCategory = "All";
+  String _selectedCategory = "All"; // Add this
 
-  //get all ther data from other providers
+  List<dynamic> get filteredData => _filteredData;
+
   Future<void> getData(BuildContext context) async {
-    await Future.delayed(Duration.zero);
+    await Future.delayed(Duration.zero); // Ensures this runs after build
 
-    //mindfull exercise
-    final List<MindfullExerciseModel> mindfullExercise =
-        Provider.of<MindfullExerciseProvider>(
-          context,
-          listen: false,
-        ).MindfullExercises;
+    final List<MindfulnessExercise> mindfullExercise =
+        Provider.of<MindfullExerciseProvider>(context, listen: false)
+            .mindfullExercise;
 
-    //meditation exercise
-    final List<MeditationExerciseModel> meditationExercise =
-        Provider.of<MeditationProvider>(
-          context,
-          listen: false,
-        ).meditationExercises;
+    final List<SleepContent> sleepContent =
+        Provider.of<SleepContentProvider>(context, listen: false).sleepExercise;
 
-    //sleep exercise
-    final List<SleepExerciseModel> sleepExercise =
-        Provider.of<SleepExerciseProvider>(
-          context,
-          listen: false,
-        ).sleepExercises;
+    final List<MeditationContent> meditations =
+        Provider.of<MeditationProvider>(context, listen: false)
+            .meditatonExercise;
 
-    _filteredData = [
+    _allData = [
       ...mindfullExercise,
-      ...meditationExercise,
-      ...sleepExercise,
+      ...sleepContent,
+      ...meditations,
     ];
 
-    filteredData = _filteredData;
+    _filteredData = _allData;
     notifyListeners();
   }
 
-  //getter
-  List<dynamic> get filterData => _filteredData;
-
-  // method to filter the data
-  void filterDataMethod(String category) {
+  void filterData(String category) {
     _selectedCategory = category;
     if (category == "All") {
-      filteredData = _filteredData;
-    } else if (category == "Mindfullness") {
-      // Show all mindfulness exercises (from MindfullExerciseModel)
-      filteredData = _filteredData
-          .where((exercise) => exercise.runtimeType.toString() == 'MindfullExerciseModel')
-          .toList();
+      _filteredData = _allData;
+    } else if (category == "Mindfulness") {
+      _filteredData = _allData.whereType<MindfulnessExercise>().toList();
     } else if (category == "Meditation") {
-      // Show all meditation exercises (from MeditationExerciseModel)
-      filteredData = _filteredData
-          .where((exercise) => exercise.runtimeType.toString() == 'MeditationExerciseModel')
-          .toList();
+      _filteredData = _allData.whereType<MeditationContent>().toList();
     } else if (category == "Sleep Stories") {
-      // Show all sleep exercises (from SleepExerciseModel)
-      filteredData = _filteredData
-          .where((exercise) => exercise.runtimeType.toString() == 'SleepExerciseModel')
-          .toList();
-    }
-    // Debug print to check filtered data
-    print('Filtering by $category. Found ${filteredData.length} items');
-    for (var item in filteredData) {
-      print(' - ${item.name}: ${item.runtimeType}');
+      _filteredData = _allData.whereType<SleepContent>().toList();
     }
     notifyListeners();
   }
-  //method to return selected category
-  String get getSelectedCategory => _selectedCategory;
+
+  //Method to return the selected category
+  // Get the current selected category
+  String getSelectedCategory() {
+    return _selectedCategory; // Update this
+  }
 }

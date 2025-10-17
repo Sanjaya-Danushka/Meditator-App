@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:meditator/models/meditation_exercise_model.dart';
+import 'package:meditation/models/meditation_model.dart';
 
 class MeditationProvider extends ChangeNotifier {
-  List<MeditationExerciseModel> _allmeditationExercises = [];
-  List<MeditationExerciseModel> meditationExercises = [];
+  List<MeditationContent> _allMeditationExerciese = [];
+  List<MeditationContent> meditatonExercise = [];
 
   MeditationProvider() {
-    _allmeditationExercises = [
-      MeditationExerciseModel(
+    _allMeditationExerciese = [
+      MeditationContent(
         category: "Stress Relief",
         name: "Calm Your Mind",
         description:
@@ -16,7 +16,7 @@ class MeditationProvider extends ChangeNotifier {
         audioUrl: "https://example.com/audio/calm-your-mind.mp3",
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Focus",
         name: "Boost Your Concentration",
         description:
@@ -25,7 +25,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/boost-your-concentration.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Anxiety Relief",
         name: "Release Anxiety",
         description:
@@ -34,7 +34,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/release-anxiety.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Sleep",
         name: "Deep Sleep Journey",
         description:
@@ -43,7 +43,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/deep-sleep-journey.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Mindfulness",
         name: "Mindful Awareness",
         description:
@@ -52,7 +52,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/mindful-awareness.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Gratitude",
         name: "Gratitude Practice",
         description:
@@ -61,7 +61,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/gratitude-practice.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Relaxation",
         name: "Body Scan Relaxation",
         description:
@@ -70,7 +70,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/body-scan-relaxation.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Compassion",
         name: "Loving Kindness",
         description:
@@ -79,7 +79,7 @@ class MeditationProvider extends ChangeNotifier {
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
         audioUrl: "https://example.com/audio/loving-kindness.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Energy",
         name: "Morning Energizer",
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
@@ -88,7 +88,7 @@ class MeditationProvider extends ChangeNotifier {
         duration: 10,
         audioUrl: "https://example.com/audio/morning-energizer.mp3",
       ),
-      MeditationExerciseModel(
+      MeditationContent(
         category: "Self-Acceptance",
         name: "Embrace Yourself",
         videoUrl: "https://www.youtube.com/watch?v=yJg-Y5byMMw",
@@ -99,6 +99,6 @@ class MeditationProvider extends ChangeNotifier {
       ),
     ];
 
-    meditationExercises = List.from(_allmeditationExercises);
+    meditatonExercise = List.from(_allMeditationExerciese);
   }
 }

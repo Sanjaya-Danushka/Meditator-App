@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:meditator/models/mindfull_exercisemodel.dart';
+import 'package:meditation/models/mindfull_exercise_model.dart';
 
 class MindfullExerciseProvider extends ChangeNotifier {
-  List<MindfullExerciseModel> _allMindfullexercises = [];
-  List<MindfullExerciseModel> MindfullExercises = [];
+  List<MindfulnessExercise> _allMindfullExercises = [];
+  List<MindfulnessExercise> mindfullExercise = [];
 
   MindfullExerciseProvider() {
-    _allMindfullexercises = [
-      MindfullExerciseModel(
+    _allMindfullExercises = [
+      MindfulnessExercise(
         category: "Beginners",
         name: "Mindful Breathing",
         description:
@@ -16,13 +16,13 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a comfortable seat.",
           "Close your eyes and take a deep breath in.",
           "Exhale slowly, focusing on your breath.",
-          "Repeat for the duration of the exercise.",
+          "Repeat for the duration of the exercise."
         ],
         duration: 5,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
         imagePath: "assets/images/mindfull.png",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Daily Practice",
         name: "Gratitude Journal",
         description:
@@ -31,13 +31,13 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a quiet place to sit with your journal.",
           "Think of three things you are grateful for today.",
           "Write them down in your journal.",
-          "Reflect on why these things are meaningful to you.",
+          "Reflect on why these things are meaningful to you."
         ],
         imagePath: "assets/images/mindfull.png",
         duration: 10,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Stress Relief",
         name: "Body Scan",
         imagePath: "assets/images/mindfull.png",
@@ -47,12 +47,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Lie down in a comfortable position.",
           "Close your eyes and take a few deep breaths.",
           "Focus on your toes, noticing any sensations.",
-          "Slowly move your attention up through your body, relaxing each part as you go.",
+          "Slowly move your attention up through your body, relaxing each part as you go."
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Focus",
         name: "Single-Tasking",
         imagePath: "assets/images/mindfull.png",
@@ -62,12 +62,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Choose a task to focus on (e.g., washing dishes).",
           "Set a timer for 10 minutes.",
           "Perform the task slowly and mindfully, paying attention to each step.",
-          "If your mind wanders, gently bring it back to the task at hand.",
+          "If your mind wanders, gently bring it back to the task at hand."
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Anxiety Relief",
         imagePath: "assets/images/mindfull.png",
         name: "Grounding Exercise",
@@ -79,12 +79,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Identify four things you can touch.",
           "Identify three things you can hear.",
           "Identify two things you can smell.",
-          "Identify one thing you can taste.",
+          "Identify one thing you can taste."
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Mindfulness",
         name: "Mindful Walking",
         imagePath: "assets/images/mindfull.png",
@@ -94,12 +94,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a quiet place to walk.",
           "Walk slowly, paying attention to each step.",
           "Notice the sensations in your feet and legs.",
-          "Focus on your breath and the rhythm of your movement.",
+          "Focus on your breath and the rhythm of your movement."
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Self-Acceptance",
         imagePath: "assets/images/mindfull.png",
         name: "Loving-Kindness Meditation",
@@ -109,12 +109,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a comfortable seat and close your eyes.",
           "Take a few deep breaths to settle in.",
           "Silently repeat the following phrases: 'May I be happy. May I be healthy. May I be safe. May I live with ease.'",
-          "Extend these phrases to others: 'May you be happy. May you be healthy. May you be safe. May you live with ease.'",
+          "Extend these phrases to others: 'May you be happy. May you be healthy. May you be safe. May you live with ease.'"
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Relaxation",
         name: "Progressive Muscle Relaxation",
         imagePath: "assets/images/mindfull.png",
@@ -124,12 +124,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a comfortable position to sit or lie down.",
           "Close your eyes and take a few deep breaths.",
           "Start with your feet, tense the muscles for a few seconds, then release.",
-          "Move up through your body, tensing and relaxing each muscle group.",
+          "Move up through your body, tensing and relaxing each muscle group."
         ],
         duration: 15,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Energy",
         name: "Morning Stretch",
         imagePath: "assets/images/mindfull.png",
@@ -139,12 +139,12 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Stand up in a comfortable position.",
           "Take a deep breath and raise your arms above your head.",
           "Stretch your body gently from side to side.",
-          "Hold each stretch for a few breaths, focusing on the sensations in your body.",
+          "Hold each stretch for a few breaths, focusing on the sensations in your body."
         ],
         duration: 5,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
-      MindfullExerciseModel(
+      MindfulnessExercise(
         category: "Creativity",
         imagePath: "assets/images/mindfull.png",
         name: "Mindful Drawing",
@@ -154,31 +154,29 @@ class MindfullExerciseProvider extends ChangeNotifier {
           "Find a quiet place and gather your drawing materials.",
           "Set a timer for 10 minutes.",
           "Begin drawing whatever comes to mind, focusing on the movement of your hand and the feel of the pencil or brush on the paper.",
-          "If your mind wanders, gently bring your attention back to the drawing.",
+          "If your mind wanders, gently bring your attention back to the drawing."
         ],
         duration: 10,
-        instructionsUrl: "https://github.com/Sanjaya-Danushka",
+        instructionsUrl: "https://github.com/HGSChandeepa/Meditate",
       ),
     ];
 
-    MindfullExercises = List.from(_allMindfullexercises);
+    mindfullExercise = List.from(_allMindfullExercises);
   }
 
   // Method to fetch all the mindfulness exercises
-  List<MindfullExerciseModel> getMindfullExercise() {
-    return MindfullExercises;
+  List<MindfulnessExercise> getMindfullExercise() {
+    return mindfullExercise;
   }
 
   // Method to search by the title
   void searchMindfullExercise(String query) {
     if (query.isEmpty) {
-      MindfullExercises = List.from(_allMindfullexercises);
+      mindfullExercise = List.from(_allMindfullExercises);
     } else {
-      MindfullExercises = _allMindfullexercises
-          .where(
-            (exercise) =>
-                exercise.name.toLowerCase().contains(query.toLowerCase()),
-          )
+      mindfullExercise = _allMindfullExercises
+          .where((exercise) =>
+              exercise.name.toLowerCase().contains(query.toLowerCase()))
           .toList();
     }
     notifyListeners();

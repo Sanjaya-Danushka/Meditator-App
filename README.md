@@ -1,4 +1,4 @@
-# meditator
+# Meditatior - DP Education APP 09
 
 A new Flutter project.
 
